@@ -15,7 +15,7 @@
 
   }
   document.getElementById("botonphp").addEventListener("click", function(){
-    ajax('http://localhost/cursos/login.php');
+    ajax('http://localhost/cursos/course/curso_php.html');
   });
   document.getElementById("botongit").addEventListener("click", function(){
     ajax('http://localhost/cursos/login.php');

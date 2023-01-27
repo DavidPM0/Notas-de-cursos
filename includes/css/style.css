@@ -3,6 +3,7 @@
     --dark-x: #1E2126; 
     --light: #ffffff;
     --lightmd: #9b9b9b;
+    --rosa: #d63384;
 }
 
 body {
@@ -19,6 +20,8 @@ body {
     min-height: 3.125rem;
     font-weight: 600;
 }
+
+.btn-rosa { background: #d63384 !important; }
 
 .form-control {
     min-height: 3.125rem;
