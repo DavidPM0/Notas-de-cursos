@@ -15,19 +15,20 @@
         $row_email = mysqli_fetch_array($resultado_email);
         $row_pass = mysqli_fetch_array($resultado_pass);
 
-        if (!$row_email) {
-            $_SESSION['mensaje'] = 'Error en el correo';
-            $_SESSION['tipo_mensaje'] = 'danger'; 
+        if (!$row_email & !$row_pass) {
+            $_SESSION['mensaje'] = 'Correo y contraseña es incorrecto';
+            $_SESSION['tipo_mensaje'] = 'danger';
+        }elseif (!$row_email) {
+            $_SESSION['mensaje'] = 'Correo es incorrecto';
+            $_SESSION['tipo_mensaje'] = 'danger';
+        }elseif (!$row_pass) {
+            $_SESSION['mensaje'] = 'Contraseña es incorrecto';
+            $_SESSION['tipo_mensaje'] = 'danger';
         }else{
-            if (!$row_pass) {
-                $_SESSION['mensaje'] = 'Error en la contraseña';
-                $_SESSION['tipo_mensaje'] = 'danger';
-            }else{
-                if ($row_email['email']==$user_email & $row_pass['pass']==$user_pass) {
-                    $_SESSION['user_id'] = $row_email['id'];
-                    header("Location: index.php");
-                }
-            }        
+            if ($row_email['email']==$user_email & $row_pass['pass']==$user_pass) {
+                $_SESSION['user_id'] = $row_email['id'];
+                header("Location: index.php");
+            }
         }
     }    
 ?>

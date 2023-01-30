@@ -27,14 +27,20 @@ include 'entrar.php';
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     <?php session_unset(); } ?>
-                    <form action="" method="POST">
+                    <form action="" method="POST" class="needs-validation" novalidate>
                         <div class="mb-4">
                           <label for="exampleInputEmail1" class="form-label font-weight-bold">Correo</label>
-                          <input type="email" class="form-control bg-dark-x border-0 text-light" id="exampleInputEmail1" placeholder="Ingresa tu email" aria-describedby="emailHelp" name="email">
+                          <input type="email" class="form-control bg-dark-x border-0 text-light" id="exampleInputEmail1" placeholder="Ingresa tu email" aria-describedby="emailHelp" name="email" required>
+                          <div class="invalid-feedback">
+                            Por favor agregué un correo.
+                          </div>
                         </div>
                         <div class="mb-4">
                           <label for="exampleInputPassword1" class="form-label font-weight-bold">Contraseña</label>
-                          <input type="password" class="form-control bg-dark-x border-0 mb-2 text-light" placeholder="Ingresa tu contraseña" id="exampleInputPassword1" name="pass">
+                          <input type="password" class="form-control bg-dark-x border-0 mb-2 text-light" placeholder="Ingresa tu contraseña" id="exampleInputPassword1" name="pass" required>
+                          <div class="invalid-feedback">
+                            Por favor agregué una contraseña.
+                          </div>
                         </div>
                         <input type="submit" class="btn btn-primary w-100" value="Iniciar sesión" name="login">
                     </form>
